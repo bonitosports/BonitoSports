@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BonitoSports | Premium Football Jerseys</title>
+    <meta name="description"
+          content="Discover premium football jerseys at BonitoSports. Find your favourite club and national team shirts.">
+
+    <style>
+        :root {
+            --bg: #090b0a;
+            --surface: #141715;
+            --surface-light: #1c211e;
+            --green: #b9f34a;
+            --text: #f5f7f3;
+            --muted: #a3aaa4;
+            --border: #292e2a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button, input, select {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        /* Announcement bar */
+
+        .announcement {
+            padding: 9px 16px;
+            text-align: center;
+            background: var(--green);
+            color: #11150b;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        /* Header */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(9, 11, 10, 0.96);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            min-height: 76px;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 26px;
+            list-style: none;
+            color: #d4d8d4;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: var(--green);
+        }
+
+        .nav-cta {
+            background: var(--green);
+            color: #10140b;
+            padding: 11px 17px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 13px;
+        }
+
+        /* Hero */
+
+        .hero {
+            max-width: 1200px;
+            min-height: 480px;
+            margin: auto;
+            padding: 80px 24px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "BS";
+            position: absolute;
+            right: 2%;
+            top: 5%;
+            font-size: clamp(200px, 35vw, 430px);
+            font-weight: 900;
+            letter-spacing: -30px;
+            color: rgba(185, 243, 74, 0.035);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 680px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(43px, 7vw, 78px);
+            line-height: 1.04;
+            letter-spacing: -3px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 480px;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .primary-btn {
+            display: inline-block;
+            background: var(--green);
+            color: #10140b;
+            padding: 14px 23px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 800;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .primary-btn:hover {
+            background: #d0ff78;
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border: 1px solid #424943;
+            border-radius: 6px;
+            margin-left: 10px;
+            font-weight: 700;
+        }
+
+        /* Benefits */
+
+        .benefits {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 22px 24px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .benefit {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .benefit span {
+            color: var(--green);
+            margin-right: 6px;
+        }
+
+        /* Shop */
+
+        .shop {
+            max-width: 1200px;
+            margin: auto;
+            padding: 85px 24px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            letter-spacing: -1.5px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .filter-btn {
+            padding: 9px 16px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            background: transparent;
+            color: #d1d5d1;
+            font-size: 13px;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--green);
+            color: #11150b;
+            border-color: var(--green);
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 360px;
+            padding: 12px 15px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: white;
+            outline: none;
+            margin-bottom: 28px;
+        }
+
+        .search-box:focus {
+            border-color: var(--green);
+        }
+
+        /* Product cards */
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .product-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.25s, border-color 0.25s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: #58654a;
+        }
+
+        .product-image {
+            height: 290px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse at 50% 35%,
+                    #333c2b 0%, #1a2018 48%, #111411 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .image-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            color: var(--green);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .image-placeholder .shirt {
+            font-size: 76px;
+            line-height: 1.2;
+        }
+
+        .image-placeholder small {
+            color: #c5cbbf;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        .product-tag {
+            position: absolute;
+            z-index: 2;
+            top: 13px;
+            left: 13px;
+            background: var(--green);
+            color: #11150b;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            padding: 5px 9px;
+            border-radius: 4px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .product-info h3 {
+            font-size: 18px;
+            margin: 7px 0;
+        }
+
+        .product-description {
+            color: var(--muted);
+            font-size: 13px;
+            min-height: 42px;
+        }
+
+        .product-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        .buy-btn {
+            background: var(--green);
+            color: #10140b;
+            border: none;
+            border-radius: 5px;
+            padding: 11px 13px;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .buy-btn:hover {
+            background: #d0ff78;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            padding: 50px 20px;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        /* About banner */
+
+        .about {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 65px 24px;
+            text-align: center;
+        }
+
+        .about-inner {
+            max-width: 720px;
+            margin: auto;
+        }
+
+        .about h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .about h2 span {
+            color: var(--green);
+        }
+
+        .about p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        /* Footer */
+
+        footer {
+            max-width: 1200px;
+            margin: auto;
+            padding: 35px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        footer .logo {
+            color: var(--text);
+            font-size: 21px;
+        }
+
+        /* Order modal */
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            background: rgba(0, 0, 0, 0.82);
+            overflow-y: auto;
+        }
+
+        .modal.open {
+            display: flex;
+        }
+
+        .modal-content {
+            width: 100%;
+            max-width: 470px;
+            background: var(--surface);
+            border: 1px solid #353c36;
+            border-radius: 12px;
+            padding: 27px;
+            position: relative;
+            margin: auto;
+        }
+
+        .modal-content h2 {
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .modal-subtitle {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 14px;
+            right: 17px;
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 27px;
+        }
+
+        .selected-product {
+            background: var(--surface-light);
+            border-radius: 7px;
+            padding: 13px;
+            margin-bottom: 18px;
+        }
+
+        .selected-product strong {
+            display: block;
+        }
+
+        .selected-product span {
+            color: var(--green);
+            font-weight: 800;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            color: #d3d8d2;
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            color: white;
+            background: #0d100e;
+            border: 1px solid #353c36;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--green);
+        }
+
+        .form-group select option {
+            background: #141715;
+        }
+
+        .order-submit {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .form-note {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 12px;
+        }
+
+        /* Responsive layout */
+
+        @media (max-width: 800px) {
+            .nav-links {
+                display: none;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 15px;
+            }
+
+            .product-image {
+                height: 230px;
+            }
+
+            .product-info {
+                padding: 14px;
+            }
+
+            .product-bottom {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .buy-btn {
+                width: 100%;
+            }
+
+            .section-heading {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 12px 16px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .nav-cta {
+                padding: 9px 11px;
+                font-size: 11px;
+            }
+
+            .hero {
+                min-height: 400px;
+                padding: 65px 20px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .secondary-btn {
+                margin: 12px 0 0;
+            }
+
+            .benefits {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .shop {
+                padding: 55px 15px;
+            }
+
+            .product-grid {
+                gap: 10px;
+            }
+
+            .product-image {
+                height: 175px;
+            }
+
+            .image-placeholder .shirt {
+                font-size: 52px;
+            }
+
+            .product-info h3 {
+                font-size: 15px;
+            }
+
+            .product-description {
+                font-size: 12px;
+                min-height: 58px;
+            }
+
+            .price {
+                font-size: 19px;
+            }
+
+            .product-info {
+                padding: 11px;
+            }
+
+            .product-tag {
+                top: 8px;
+                left: 8px;
+                font-size: 9px;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="announcement">
+        YOUR GAME. YOUR STYLE. &nbsp; | &nbsp; WELCOME TO BONITOSPORTS
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">BONITO<span>SPORTS</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop Jerseys</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+
+            <a href="#shop" class="nav-cta">SHOP NOW ↗</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="eyebrow">THE FOOTBALL CULTURE</div>
+
+                <h1>
+                    WEAR THE<br>
+                    <span>GAME.</span> LIVE<br>
+                    THE PASSION.
+                </h1>
+
+                <p>
+                    From legendary clubs to iconic national teams,
+                    find football jerseys that represent your passion
+                    for the beautiful game.
+                </p>
+
+                <a href="#shop" class="primary-btn">EXPLORE JERSEYS ↗</a>
+                <a href="#about" class="secondary-btn">OUR STORY</a>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <div class="benefit"><span>✦</span> FOOTBALL FOR EVERY FAN</div>
+            <div class="benefit"><span>✦</span> MULTIPLE SIZES AVAILABLE</div>
+            <div class="benefit"><span>✦</span> EASY WHATSAPP ORDERS</div>
+        </section>
+
+        <section class="shop" id="shop">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">FIND YOUR NEXT JERSEY</div>
+                    <h2>THE JERSEY COLLECTION</h2>
+                    <p>Choose your club. Represent your colours.</p>
+                </div>
+            </div>
+
+            <div class="filters" id="filters">
+                <button class="filter-btn active" data-category="All">All Jerseys</button>
+                <button class="filter-btn" data-category="Club">Club Jerseys</button>
+                <button class="filter-btn" data-category="National">National Teams</button>
+                <button class="filter-btn" data-category="Retro">Retro Jerseys</button>
+            </div>
+
+            <input
+                type="search"
+                class="search-box"
+                id="search"
+                placeholder="Search for your favourite team..."
+                aria-label="Search jerseys"
+            >
+
+            <div class="product-grid" id="productGrid"></div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about-inner">
+                <div class="eyebrow">MORE THAN JUST A JERSEY</div>
+                <h2>THIS IS <span>FOOTBALL.</span></h2>
+
+                <p>
+                    At BonitoSports, football is more than a game.
+                    It is the clubs we love, the players who inspire us,
+                    and the colours we proudly wear. Find your next
+                    favourite jersey and represent your passion.
+                </p>
+
+                <a href="#shop" class="primary-btn">FIND YOUR JERSEY ↗</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#" class="logo">BONITO<span>SPORTS</span></a>
+        <p>© <span id="year"></span> BonitoSports. All rights reserved.</p>
+        <a href="#shop">Explore the collection ↑</a>
+    </footer>
+
+    <!-- Order form -->
+
+    <div class="modal" id="orderModal" role="dialog"
+         aria-modal="true" aria-labelledby="modalTitle">
+
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal"
+                    aria-label="Close order form">&times;</button>
+
+            <h2 id="modalTitle">ORDER YOUR JERSEY</h2>
+            <p class="modal-subtitle">
+                Complete your details to continue to WhatsApp.
+            </p>
+
+            <div class="selected-product">
+                <strong id="selectedName"></strong>
+                <span id="selectedPrice"></span>
+            </div>
+
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="customerName">Your name *</label>
+                    <input id="customerName" name="customerName"
+                           type="text" required maxlength="100"
+                           placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="customerPhone">Your phone number *</label>
+                    <input id="customerPhone" name="customerPhone"
+                           type="tel" required maxlength="20"
+                           placeholder="Enter your contact number">
+                </div>
+
+                <div class="form-group">
+                    <label for="jerseySize">Select size *</label>
+                    <select id="jerseySize" name="jerseySize" required>
+                        <option value="">Choose your size</option>
+                        <option value="S">Small (S)</option>
+                        <option value="M">Medium (M)</option>
+                        <option value="L">Large (L)</option>
+                        <option value="XL">Extra Large (XL)</option>
+                        
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity *</label>
+                    <input id="quantity" name="quantity"
+                           type="number" min="1" max="20"
+                           value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Delivery address *</label>
+                    <textarea id="address" name="address"
+                              rows="3" required maxlength="500"
+                              placeholder="Enter your full delivery address"></textarea>
+                </div>
+
+                <button type="submit" class="primary-btn order-submit">
+                    CONTINUE TO WHATSAPP ↗
+                </button>
+
+                <p class="form-note">
+                    WhatsApp will open with your order details.
+                    You must press Send in WhatsApp to submit the order.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        /*
+         * IMPORTANT:
+         * Replace this example with your WhatsApp number.
+         * Include the country code, without +, spaces or dashes.
+         * Example format for India: 919876543210
+         */
+        const WHATSAPP_NUMBER = "916282574807";
+
+        /*
+         * Add your real products here.
+         * Prices below are example prices, not confirmed selling prices.
+         *
+         * Save your product photos in an "images" folder beside this file.
+         */
+
+        const products = [
+            {
+                id: 1,
+                name: "BARCELONA 26-27 AWAY KIT LAMINE YAMAL",
+                category: "Club",
+                price: 999,
+                tag: "BEST SELLER",
+                description: "- ⁠SUBLIMATION, ⁠DOTNET MATERIAL.",
+                image: "images/BARCAYAMAL.png"
+            },
+            {
+                id: 2,
+                name: "REAL MADRID 26-27 AWAY KIT MBAPPE",
+                category: "Club",
+                price: 999,
+                tag: "POPULAR",
+                description: "Represent the famous Blaugrana colours.",
+                image: "images/EMIRATESMBAPPE.png"
+            },
+            {
+                id: 3,
+                name: "FRANCE 2026 HOME KIT MBAPPE POLO EMBROIDERY PREMIUM",
+                category: "National",
+                price: 1999,
+                tag: "FAN FAVOURITE",
+                description: ".",
+                image: "images/FRANCEMBAPPE.png"
+            },
+            {
+                id: 4,
+                name: "LIVERPOOL 26-27 HOME KIT SZOBOSZLAI EMBROIDERY",
+                category: "Club",
+                price: 2999,
+                tag: "ICONIC",
+                description: "Show your passion for the Red Devils.",
+                image: "images/SZOBOLFC.png"
+            },
+            {
+                id: 5,
+                name: "ARSANEL 26-27 HOME KIT ODEGAARD EMBROIDERY PREMIUM",
+                category: "Club",
+                price: 1999,
+                tag: "SAMBA STYLE",
+                description: "Bring the football spirit.",
+                image: "images/EMIRATESODEGAARD.png"
+            },
+            {
+                id: 6,
+                name: "ENGLAND 2026 AWAY KIT KANE SUBLIMATION",
+                category: "National",
+                price: 1199,
+                tag: "RETRO",
+                description: "Vintage-inspired style for football lovers.",
+                image: "images/KANE9.png"
+            }
+            
+        ];
+
+        let activeCategory = "All";
+        let selectedProduct = null;
+
+        const productGrid = document.getElementById("productGrid");
+        const searchInput = document.getElementById("search");
+        const modal = document.getElementById("orderModal");
+        const orderForm = document.getElementById("orderForm");
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        function formatPrice(price) {
+            return "₹" + price.toLocaleString("en-IN");
+        }
+
+        function renderProducts() {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+
+            const filteredProducts = products.filter(product => {
+                const matchesCategory =
+                    activeCategory === "All" ||
+                    product.category === activeCategory;
+
+                const matchesSearch =
+                    product.name.toLowerCase().includes(searchTerm) ||
+                    product.description.toLowerCase().includes(searchTerm);
+
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filteredProducts.length === 0) {
+                productGrid.innerHTML =
+                    '<div class="no-results">No jerseys found. Try another search.</div>';
+                return;
+            }
+
+            productGrid.innerHTML = filteredProducts.map(product => `
+                <article class="product-card">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <span class="shirt">👕</span>
+                            <small>BONITOSPORTS</small>
+                        </div>
+
+                        <img
+                            src="${product.image}"
+                            alt="${product.name}"
+                            loading="lazy"
+                            onerror="this.style.display='none'"
+                            onload="this.previousElementSibling.style.display='none'"
+                        >
+
+                        <span class="product-tag">${product.tag}</span>
+                    </div>
+
+                    <div class="product-info">
+                        <div class="product-category">${product.category} JERSEY</div>
+                        <h3>${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+
+                        <div class="product-bottom">
+                            <span class="price">${formatPrice(product.price)}</span>
+                            <button class="buy-btn"
+                                    data-product-id="${product.id}">
+                                BUY NOW ↗
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            `).join("");
+        }
+
+        document.getElementById("filters").addEventListener("click", event => {
+            const button = event.target.closest(".filter-btn");
+
+            if (!button) return;
+
+            activeCategory = button.dataset.category;
+
+            document.querySelectorAll(".filter-btn").forEach(filter => {
+                filter.classList.toggle("active", filter === button);
+            });
+
+            renderProducts();
+        });
+
+        searchInput.addEventListener("input", renderProducts);
+
+        productGrid.addEventListener("click", event => {
+            const button = event.target.closest("[data-product-id]");
+
+            if (!button) return;
+
+            selectedProduct = products.find(product =>
+                product.id === Number(button.dataset.productId)
+            );
+
+            if (!selectedProduct) return;
+
+            document.getElementById("selectedName").textContent =
+                selectedProduct.name;
+
+            document.getElementById("selectedPrice").textContent =
+                formatPrice(selectedProduct.price) + " per jersey";
+
+            modal.classList.add("open");
+            document.body.style.overflow = "hidden";
+        });
+
+        function closeModal() {
+            modal.classList.remove("open");
+            document.body.style.overflow = "";
+        }
+
+        document.getElementById("closeModal")
+            .addEventListener("click", closeModal);
+
+        modal.addEventListener("click", event => {
+            if (event.target === modal) closeModal();
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") closeModal();
+        });
+
+        orderForm.addEventListener("submit", event => {
+            event.preventDefault();
+
+            if (!selectedProduct) return;
+
+            if (!/^\d{10,15}$/.test(WHATSAPP_NUMBER)) {
+                alert(
+                    "Please add your real WhatsApp number in the code first. " +
+                    "Find WHATSAPP_NUMBER near the beginning of the JavaScript."
+                );
+                return;
+            }
+
+            const customerName =
+                document.getElementById("customerName").value.trim();
+
+            const customerPhone =
+                document.getElementById("customerPhone").value.trim();
+
+            const size =
+                document.getElementById("jerseySize").value;
+
+            const quantity =
+                Number(document.getElementById("quantity").value);
+
+            const address =
+                document.getElementById("address").value.trim();
+
+            if (!customerName || !customerPhone || !size ||
+                !address || quantity < 1 || quantity > 20) {
+                alert("Please check all your order details.");
+                return;
+            }
+
+            const total = selectedProduct.price * quantity;
+
+            const message = [
+                
+                 " *BONITOSPORTS - NEW ORDER*",
+                 "",
+                 "Hello BonitoSports! I'd like to place the following order.",
+                 " ","",
+                 " *ORDER SUMMARY*",
+                
+                 " ","",
+                 " Jersey: " + selectedProduct.name,
+                 " Size: " + size,
+                 " Quantity: " + quantity,
+                  " Price per jersey: " + formatPrice(selectedProduct.price),
+                  " ",
+                  " *TOTAL JERSEY PRICE: " + formatPrice(total) + "*",
+                  " ",
+                  " *CUSTOMER INFORMATION*",
+                  " ",
+                  " Name: " + customerName,
+                  " Phone: " + customerPhone,
+                  " Delivery Address: " + address,
+                  " ",
+                  
+                  " ",
+                      "Please confirm the order and let me know the delivery charges and expected delivery date.",
+                  " ",
+                  "Thank you!"
+            ].join("\n");
+
+            const whatsappURL = 
+                "https://wa.me/" + WHATSAPP_NUMBER +
+                "?text=" + encodeURIComponent(message);
+
+            window.open(whatsappURL, "_blank", "noopener,noreferrer");
+        });
+
+        renderProducts();
+    </script>
+
+</body>
+</html>
